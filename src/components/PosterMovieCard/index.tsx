@@ -1,13 +1,16 @@
-import { View, Text, Image } from "react-native";
+import { View, Image } from "react-native";
 import { styles } from "./styles";
 
-const PosterMovieCard = ({ title }) => {
+type PosterMovieCardProps = {
+  poster: string;
+};
+
+const PosterMovieCard = ({ poster }: PosterMovieCardProps) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>PosterMovieCard</Text>
       <Image
         style={styles.poster}
-        source={{ uri: `https://image.tmdb.org/t/p/original${title}` }}
+        source={{ uri: `https://image.tmdb.org/t/p/original${poster}` }}
       />
     </View>
   );
